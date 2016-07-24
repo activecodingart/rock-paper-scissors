@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Rock Scissors Paper</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-7 col-sm-9 main">
+			<h1 class="text-center">Rock Paper Scissors</h1>
+			<!--Game results-->
+			<div>
+				<div class="btn-group btn-group-justified">
+					<div class="btn btn-default disabled">
+						<div class="btn-primary">Player</div>
+						<div class="playerName">Guest</div>
+					</div>
+					<div class="btn btn-default disabled">
+						<div class="btn-primary">Wins</div>
+						<div class="playerScore">0</div>
+					</div>
+					<div class="btn btn-default disabled">
+						<div class="btn-primary">Ties</div>
+						<div class="ties">0</div>
+					</div>
+					<div class="btn btn-default disabled">
+						<div class="btn-primary">Wins</div>
+						<div class="computerScore">0</div>
+					</div>
+					<div class="btn btn-default disabled">
+						<div class="btn-primary">Player</div>
+						<div>Computer</div>
+					</div>
+				</div>
+			</div>
+
+			<h3 class="text-center">Round <span class="round">1</span></h3>
+			<!-- Pick buttons-->
+			<div class="pick-buttons">
+				<div id="gameResult"></div>
+				<button class="btn btn-default pick-button" onclick="playerPick('rock')">
+					<i class="fa fa-hand-rock-o" aria-hidden="true"></i>
+					<div>Rock</div>
+				</button>
+				<button class="btn btn-default pick-button" onclick="playerPick('paper')">
+					<i class="fa fa-hand-paper-o" aria-hidden="true"></i>
+					<div>Paper</div>
+				</button>
+				<button class="btn btn-default pick-button" onclick="playerPick('scissors')">
+					<i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
+					<div>Scissors</div>
+				</button>
+			</div>
+			<!--Players-->
+			<div class="row players">
+				<div class="text-center"><p>Winner: <span id="roundResult"></span></p></div>
+				<div class="col-xs-4 player">
+					<div><span class="playerName">Guest</span>:</div>
+					<div><span id="playerPick"></span></div>
+				</div>
+				<div class="col-xs-4">
+					
+					<div class="text-center">VS</div>
+				</div>
+				<div class="col-xs-4 text-right player">
+					<div><span>Computer:</span></div>
+					<div><span id="computerPick"></span></div>
+				</div>
+			</div>
+			<!--New Game-->
+			<div class="new-game">
+				<button class="btn btn-primary btn-block" onclick="newGame()">New game</button>
+			</div>
+			<!--Game table-->
+			<div class="panel text-center">
+				<div class="panel-heading btn-primary">Game table</div>
+				<div class="panel-body">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th class="playerName">Guest</th>
+								<th>Round</th>
+								<th>Computer</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
